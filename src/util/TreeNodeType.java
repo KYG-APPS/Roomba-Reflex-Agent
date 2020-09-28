@@ -6,8 +6,8 @@ import node.*;
  * TreeNodeType.java
  * @author Kevin Gao on 2020-9-27
  * 
- * Enum for linking the different types of TreeNodes with their subclasses
- * e.g. Selection, Sequence, Until Fail, etc.
+ * Enum for linking the different types of TreeNodes with their respective subclasses
+ * Allows for efficient identification of TreeNode subclasses
  */
 public enum TreeNodeType {
 	
