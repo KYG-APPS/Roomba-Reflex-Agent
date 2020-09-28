@@ -5,22 +5,27 @@ enum TreeNodeType
 	- string identifier
 	- ClassType
 
+* Done!
 enum State
 	- Success/Running/Failed states
 	
+
 enum BehaviorTreeStructure
 	- Node arrangement of behavior tree for easy changing/updating
 
-abstract class Node
+* Done!
+abstract class TreeNode
 - Instance Variables:
 	- ArrayList children;
 	- String descriptor;
 	- TreeNodeType type;
 - Methods:
-	- TreeNodeType getNodeType();
-	- int num_children();
-	- Node get_child(int index);
-	- STATE run();
+	- public TreeNode(String descriptor, TreeNodeType type);
+	- public int numChildren();
+	- public TreeNode getChild(int index); 
+	- public String getDescriptor();
+	- public TreeNodeType getTreeNodeType() ;
+	- public abstract State run();
 * All subclasses of node should implement their own static run function.
 
 Node Subclasses:
