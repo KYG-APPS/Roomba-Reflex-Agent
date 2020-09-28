@@ -1,5 +1,6 @@
 Plan for HW 1 - Simple Reflex Agent
 
+* Need to fix Placeholder
 enum TreeNodeType
 	- string identifier
 	- ClassType
