@@ -1,3 +1,54 @@
 Plan for HW 1 - Simple Reflex Agent
 
-Roomba
+enum TREE_NODE
+	- string identifier
+	- ClassType
+
+enum STATE
+	- Success/Running/Failed states
+	
+enum BEHAVIOR_TREE
+	- Node arrangement of behavior tree for easy changing/updating
+
+abstract class Node
+- Instance Variables:
+	- ArrayList children;
+	- String descriptor;
+	- TREE_NODE type;
+- Methods:
+	- TREE_NODE get_type();
+	- int num_children();
+	- Node get_child(int index);
+	- STATE run();
+* All subclasses of node should implement their own static run function.
+
+Node Subclasses:
+- Priority
+	- Needs priority identifier
+- Selection
+- Sequence
+- Random Selection
+- Random Sequence
+
+Decorators:
+- Logical Negation
+- Until Succeeds
+- Until Fails
+- Timer
+
+class BehaviorTree
+- Instance Variables:
+	- Node root;
+	- HashMap<String, String> blackboard;
+- Methods:
+	- BehaviorTree();
+	- int run_cycle();
+	- HashMap<String, String> get_blackboard()
+
+class Roomba:
+- Instance Variables:
+	- BehaviorTree behavior_tree;
+- Methods:
+	- Roomba();
+	- int run_cycle();
+	- boolean generate_simulated_scenario();
