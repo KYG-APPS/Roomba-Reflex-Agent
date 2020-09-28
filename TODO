@@ -28,10 +28,12 @@ abstract class TreeNode
 	- public abstract State run();
 * All subclasses of node should implement their own static run function.
 
+* Need to implement run
 Node Subclasses:
+- Selection
+
 - Priority
 	- Needs priority identifier
-- Selection
 - Sequence
 - Random Selection
 - Random Sequence

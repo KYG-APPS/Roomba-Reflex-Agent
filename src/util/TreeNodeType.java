@@ -1,7 +1,6 @@
 package util;
 
-//TODO: Fix placeholder
-import main.Main;
+import node.*;
 
 /**
  * TreeNodeType.java
@@ -13,7 +12,7 @@ import main.Main;
 public enum TreeNodeType {
 	
 	/** Initialization of all TreeNodes with their corresponding descriptors */
-	PLACEHOLDER("Test", Main.class);
+	SELECTION("Selection", SelectionNode.class);
 	
 	/** Identifier String for the TreeNode */
 	private final String identifier;
