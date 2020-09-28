@@ -1,6 +1,6 @@
 Plan for HW 1 - Simple Reflex Agent
 
-* Need to fix Placeholder
+* Update as Node Subclasses are added
 enum TreeNodeType
 	- string identifier
 	- ClassType
@@ -8,7 +8,6 @@ enum TreeNodeType
 * Done!
 enum State
 	- Success/Running/Failed states
-	
 
 enum BehaviorTreeStructure
 	- Node arrangement of behavior tree for easy changing/updating
@@ -28,10 +27,12 @@ abstract class TreeNode
 	- public abstract State run();
 * All subclasses of node should implement their own static run function.
 
-* Need to implement run
+* In implementation
 Node Subclasses:
+* Need to implement run()
 - Selection
 
+* Need to implement
 - Priority
 	- Needs priority identifier
 - Sequence

@@ -8,8 +8,8 @@ package util;
  */
 public enum State {
 	
-	SUCCESS,
-	FAIL,
+	SUCCEEDED,
+	FAILED,
 	RUNNING;
 	
 }
