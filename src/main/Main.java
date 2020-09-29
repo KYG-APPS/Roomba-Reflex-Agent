@@ -19,6 +19,9 @@ public class Main {
 		testRoomba();
 	}
 
+	/**
+	 * Tests the Roomba in a randomized situation
+	 */
 	private static void testRoomba() {
 		/** Create BehaviorTree from the predefined structure in the enum */
 		TreeGenerator generator = new TreeGenerator();
@@ -30,11 +33,13 @@ public class Main {
 		roomba.setSpot(true);
 		roomba.setDustySpot(true);
 		roomba.setGeneral(true);
-
-		int cycle = 1;
+		
 		/** Run simulation cycles */
+		int cycle = 1;
 		while(roomba.getBatteryLevel() >= 28) {
+			int batteryLevel = roomba.getBatteryLevel();
 			System.out.println("---------- Running Cycle " + cycle + " ----------");
+			System.out.println("Battery: " + batteryLevel);
 			roomba.runCycle();
 			cycle++;
 			System.out.println();
