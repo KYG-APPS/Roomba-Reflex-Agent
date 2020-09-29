@@ -35,7 +35,7 @@ public enum TreeNodeType {
 	DO_NOTHING("do nothing", DoNothingNode.class),
 	
 	/** Conditions */
-	BATTERY_GREATER_THAN("battery greater than", BatteryGreaterThanNode.class),
+	BATTERY_LESS_THAN("battery less than", BatteryLessThanNode.class),
 	SPOT("spot", SpotNode.class),
 	GENERAL("general", GeneralNode.class),
 	DUSTY_SPOT("dusty spot", DustySpotNode.class);

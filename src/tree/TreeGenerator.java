@@ -9,7 +9,7 @@ import util.TreeNodeType;
  * TreeGenerator.java
  * @author Kevin Gao on 2020-9-29
  *
- * Generates a BehaviorTree as specified by RoombaBehaviorTree
+ * Generates a BehaviorTree as specified by BehaviorTreeStructure
  */
 public class TreeGenerator {
 
