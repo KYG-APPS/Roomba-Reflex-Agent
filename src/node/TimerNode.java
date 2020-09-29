@@ -1,5 +1,6 @@
 package node;
 
+import tree.BlackBoard;
 import util.State;
 import util.TreeNodeType;
 
@@ -15,8 +16,8 @@ public class TimerNode extends TreeNode {
 	 * Constructor for TimerNode
 	 * @param descriptor - custom description of the purpose of this TreeNode
 	 */
-	public TimerNode(String descriptor) {
-		super(descriptor, TreeNodeType.TIMER);
+	public TimerNode(String descriptor, BlackBoard blackBoard) {
+		super(descriptor, TreeNodeType.TIMER, blackBoard);
 	}
 
 	// TODO: Implement Order

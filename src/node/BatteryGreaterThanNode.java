@@ -1,5 +1,6 @@
 package node;
 
+import tree.BlackBoard;
 import util.State;
 import util.TreeNodeType;
 
@@ -15,8 +16,8 @@ public class BatteryGreaterThanNode extends TreeNode {
 	 * Constructor for BatteryGreaterThanNode
 	 * @param descriptor - custom description of the purpose of this TreeNode
 	 */
-	public BatteryGreaterThanNode(String descriptor) {
-		super(descriptor, TreeNodeType.BATTERY_GREATER_THAN);
+	public BatteryGreaterThanNode(String descriptor, BlackBoard blackBoard) {
+		super(descriptor, TreeNodeType.BATTERY_GREATER_THAN, blackBoard);
 	}
 
 	// TODO: Implement Order

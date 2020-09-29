@@ -1,5 +1,6 @@
 package node;
 
+import tree.BlackBoard;
 import util.State;
 import util.TreeNodeType;
 
@@ -15,8 +16,8 @@ public class SpotNode extends TreeNode {
 	 * Constructor for SpotNode
 	 * @param descriptor - custom description of the purpose of this TreeNode
 	 */
-	public SpotNode(String descriptor) {
-		super(descriptor, TreeNodeType.SPOT);
+	public SpotNode(String descriptor, BlackBoard blackBoard) {
+		super(descriptor, TreeNodeType.SPOT, blackBoard);
 	}
 
 	// TODO: Implement Order

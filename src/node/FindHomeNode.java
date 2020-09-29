@@ -1,5 +1,6 @@
 package node;
 
+import tree.BlackBoard;
 import util.State;
 import util.TreeNodeType;
 
@@ -15,8 +16,8 @@ public class FindHomeNode extends TreeNode {
 	 * Constructor for FindHomeNode
 	 * @param descriptor - custom description of the purpose of this TreeNode
 	 */
-	public FindHomeNode(String descriptor) {
-		super(descriptor, TreeNodeType.FIND_HOME);
+	public FindHomeNode(String descriptor, BlackBoard blackBoard) {
+		super(descriptor, TreeNodeType.FIND_HOME, blackBoard);
 	}
 
 	// TODO: Implement Order

@@ -2,6 +2,7 @@ package node;
 
 import java.util.ArrayList;
 
+import tree.BlackBoard;
 import util.State;
 import util.TreeNodeType;
 
@@ -22,15 +23,19 @@ public abstract class TreeNode {
 	/** The TreeNodeType of this Node */
 	private TreeNodeType type;
 	
+	/** The BlackBoard of the BehaviorTree this TreeNode is a part of */
+	private BlackBoard blackBoard;
+	
 	/**
 	 * Constructor for TreeNode
 	 * @param descriptor - custom description of the purpose of this TreeNode
 	 * @param type - TreeNodeType of this TreeNode
 	 */
-	public TreeNode(String descriptor, TreeNodeType type) {
+	public TreeNode(String descriptor, TreeNodeType type, BlackBoard blackBoard) {
 		children = new ArrayList<TreeNode>();
 		this.descriptor = descriptor;
 		this.type = type;
+		this.blackBoard = blackBoard;
 	}
 	
 	/**
@@ -60,6 +65,13 @@ public abstract class TreeNode {
 	 */
 	public TreeNodeType getTreeNodeType() {
 		return this.type;
+	}
+	
+	/**
+	 * @return The BlackBoard of the BehaviorTree this TreeNode is a part of
+	 */
+	public BlackBoard getBlackBoard() {
+		return this.blackBoard;
 	}
 	
 	/**

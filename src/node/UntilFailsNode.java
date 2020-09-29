@@ -1,5 +1,6 @@
 package node;
 
+import tree.BlackBoard;
 import util.State;
 import util.TreeNodeType;
 
@@ -15,8 +16,8 @@ public class UntilFailsNode extends TreeNode {
 	 * Constructor for UntilFailsNode
 	 * @param descriptor - custom description of the purpose of this TreeNode
 	 */
-	public UntilFailsNode(String descriptor) {
-		super(descriptor, TreeNodeType.UNTIL_FAILS);
+	public UntilFailsNode(String descriptor, BlackBoard blackBoard) {
+		super(descriptor, TreeNodeType.UNTIL_FAILS, blackBoard);
 	}
 
 	// TODO: Implement Order

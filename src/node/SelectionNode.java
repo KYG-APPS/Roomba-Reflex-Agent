@@ -1,5 +1,6 @@
 package node;
 
+import tree.BlackBoard;
 import util.State;
 import util.TreeNodeType;
 
@@ -15,8 +16,8 @@ public class SelectionNode extends TreeNode {
 	 * Constructor for SelectionNode
 	 * @param descriptor - custom description of the purpose of this TreeNode
 	 */
-	public SelectionNode(String descriptor) {
-		super(descriptor, TreeNodeType.SELECTION);
+	public SelectionNode(String descriptor, BlackBoard blackBoard) {
+		super(descriptor, TreeNodeType.SELECTION, blackBoard);
 	}
 	
 	// TODO: Implement Order

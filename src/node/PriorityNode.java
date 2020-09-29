@@ -1,5 +1,6 @@
 package node;
 
+import tree.BlackBoard;
 import util.State;
 import util.TreeNodeType;
 
@@ -15,8 +16,8 @@ public class PriorityNode extends TreeNode {
 	 * Constructor for PriorityNode
 	 * @param descriptor - custom description of the purpose of this TreeNode
 	 */
-	public PriorityNode(String descriptor) {
-		super(descriptor, TreeNodeType.PRIORITY);
+	public PriorityNode(String descriptor, BlackBoard blackBoard) {
+		super(descriptor, TreeNodeType.PRIORITY, blackBoard);
 	}
 
 	// TODO: Implement Order

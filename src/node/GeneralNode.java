@@ -1,5 +1,6 @@
 package node;
 
+import tree.BlackBoard;
 import util.State;
 import util.TreeNodeType;
 
@@ -15,8 +16,8 @@ public class GeneralNode extends TreeNode {
 	 * Constructor for GeneralNode
 	 * @param descriptor - custom description of the purpose of this TreeNode
 	 */
-	public GeneralNode(String descriptor) {
-		super(descriptor, TreeNodeType.GENERAL);
+	public GeneralNode(String descriptor, BlackBoard blackBoard) {
+		super(descriptor, TreeNodeType.GENERAL, blackBoard);
 	}
 
 	// TODO: Implement Order

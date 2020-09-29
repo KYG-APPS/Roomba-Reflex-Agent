@@ -1,5 +1,6 @@
 package node;
 
+import tree.BlackBoard;
 import util.State;
 import util.TreeNodeType;
 
@@ -15,8 +16,8 @@ public class LogicalNegationNode extends TreeNode {
 	 * Constructor for LogicalNegationNode
 	 * @param descriptor - custom description of the purpose of this TreeNode
 	 */
-	public LogicalNegationNode(String descriptor) {
-		super(descriptor, TreeNodeType.LOGICAL_NEGATION);
+	public LogicalNegationNode(String descriptor, BlackBoard blackBoard) {
+		super(descriptor, TreeNodeType.LOGICAL_NEGATION, blackBoard);
 	}
 
 	// TODO: Implement Order

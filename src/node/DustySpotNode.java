@@ -1,5 +1,6 @@
 package node;
 
+import tree.BlackBoard;
 import util.State;
 import util.TreeNodeType;
 
@@ -15,8 +16,8 @@ public class DustySpotNode extends TreeNode {
 	 * Constructor for DustySpotNode
 	 * @param descriptor - custom description of the purpose of this TreeNode
 	 */
-	public DustySpotNode(String descriptor) {
-		super(descriptor, TreeNodeType.DUSTY_SPOT);
+	public DustySpotNode(String descriptor, BlackBoard blackBoard) {
+		super(descriptor, TreeNodeType.DUSTY_SPOT, blackBoard);
 	}
 
 	// TODO: Implement Order

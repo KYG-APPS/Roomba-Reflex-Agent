@@ -1,5 +1,6 @@
 package node;
 
+import tree.BlackBoard;
 import util.State;
 import util.TreeNodeType;
 
@@ -15,8 +16,8 @@ public class CleanSpotNode extends TreeNode {
 	 * Constructor for CleanSpotNode
 	 * @param descriptor - custom description of the purpose of this TreeNode
 	 */
-	public CleanSpotNode(String descriptor) {
-		super(descriptor, TreeNodeType.CLEAN_SPOT);
+	public CleanSpotNode(String descriptor, BlackBoard blackBoard) {
+		super(descriptor, TreeNodeType.CLEAN_SPOT, blackBoard);
 	}
 
 	// TODO: Implement Order

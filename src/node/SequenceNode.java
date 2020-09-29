@@ -1,5 +1,6 @@
 package node;
 
+import tree.BlackBoard;
 import util.State;
 import util.TreeNodeType;
 
@@ -15,8 +16,8 @@ public class SequenceNode extends TreeNode {
 	 * Constructor for SequenceNode
 	 * @param descriptor - custom description of the purpose of this TreeNode
 	 */
-	public SequenceNode(String descriptor) {
-		super(descriptor, TreeNodeType.SEQUENCE);
+	public SequenceNode(String descriptor, BlackBoard blackBoard) {
+		super(descriptor, TreeNodeType.SEQUENCE, blackBoard);
 	}
 
 	// TODO: Implement Order

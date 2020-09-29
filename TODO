@@ -51,6 +51,24 @@ Decorators:
 - Until Succeeds
 - Until Fails
 - Timer
+Tasks:
+- FIND_HOME
+	- Writes to homePath
+- GO_HOME
+	- Reads from homePath
+- DOCK
+- CLEAN_SPOT
+- DONE_SPOT
+	- Writes to spot
+- CLEAN
+- DONE_GENERAL
+	- Writes to general
+- DO_NOTHING
+Conditions:
+- BATTERY_GREATER_THAN_30
+- SPOT
+- GENERAL
+- DUSTY_SPOT
 
 * Need to implement runCycle()
 class BehaviorTree
@@ -68,27 +86,11 @@ enum BehaviorTreeStructure
 	
 class TreeGenerator:
 	generateTreeFromEnum();
-	
-Generation of Random Scenarios?
 
-TaskNode
-- FIND_HOME
-	- Writes to homePath
-- GO_HOME
-	- Reads from homePath
-- DOCK
-- CLEAN_SPOT
-- DONE_SPOT
-	- Writes to spot
-- CLEAN
-- DONE_GENERAL
-	- Writes to general
-- DO_NOTHING
-ConditionNode
-- BATTERY_GREATER_THAN_30
-- SPOT
-- GENERAL
-- DUSTY_SPOT
+Questions
+- How are situations generated?
+- Are DONE GENERAL/SPOT DONE just updaters?
+- Do timer nodes stop execution of a cycle
 
 GENERAL CLEANUP
 - Brackets

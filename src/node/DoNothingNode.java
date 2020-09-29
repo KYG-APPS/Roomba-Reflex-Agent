@@ -1,5 +1,6 @@
 package node;
 
+import tree.BlackBoard;
 import util.State;
 import util.TreeNodeType;
 
@@ -15,8 +16,8 @@ public class DoNothingNode extends TreeNode {
 	 * Constructor for DoNothingNode
 	 * @param descriptor - custom description of the purpose of this TreeNode
 	 */
-	public DoNothingNode(String descriptor) {
-		super(descriptor, TreeNodeType.DO_NOTHING);
+	public DoNothingNode(String descriptor, BlackBoard blackBoard) {
+		super(descriptor, TreeNodeType.DO_NOTHING, blackBoard);
 	}
 
 	// TODO: Implement Order

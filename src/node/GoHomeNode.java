@@ -1,5 +1,6 @@
 package node;
 
+import tree.BlackBoard;
 import util.State;
 import util.TreeNodeType;
 
@@ -15,8 +16,8 @@ public class GoHomeNode extends TreeNode {
 	 * Constructor for GoHomeNode
 	 * @param descriptor - custom description of the purpose of this TreeNode
 	 */
-	public GoHomeNode(String descriptor) {
-		super(descriptor, TreeNodeType.GO_HOME);
+	public GoHomeNode(String descriptor, BlackBoard blackBoard) {
+		super(descriptor, TreeNodeType.GO_HOME, blackBoard);
 	}
 
 	// TODO: Implement Order

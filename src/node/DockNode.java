@@ -1,5 +1,6 @@
 package node;
 
+import tree.BlackBoard;
 import util.State;
 import util.TreeNodeType;
 
@@ -15,8 +16,8 @@ public class DockNode extends TreeNode {
 	 * Constructor for DockNode
 	 * @param descriptor - custom description of the purpose of this TreeNode
 	 */
-	public DockNode(String descriptor) {
-		super(descriptor, TreeNodeType.DOCK);
+	public DockNode(String descriptor, BlackBoard blackBoard) {
+		super(descriptor, TreeNodeType.DOCK, blackBoard);
 	}
 
 	// TODO: Implement Order

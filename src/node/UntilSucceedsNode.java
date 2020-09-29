@@ -1,5 +1,6 @@
 package node;
 
+import tree.BlackBoard;
 import util.State;
 import util.TreeNodeType;
 
@@ -15,8 +16,8 @@ public class UntilSucceedsNode extends TreeNode{
 	 * Constructor for UntilSucceedsNode
 	 * @param descriptor - custom description of the purpose of this TreeNode
 	 */
-	public UntilSucceedsNode(String descriptor) {
-		super(descriptor, TreeNodeType.UNTIL_SUCCEEDS);
+	public UntilSucceedsNode(String descriptor, BlackBoard blackBoard) {
+		super(descriptor, TreeNodeType.UNTIL_SUCCEEDS, blackBoard);
 	}
 
 	// TODO: Implement Order
