@@ -33,7 +33,7 @@ public class GoHomeNode extends TreeNode {
 		blackBoard.setBatteryLevel(blackBoard.getBatteryLevel() - 1);
 		String path = super.getBlackBoard().getHomePath();
 		if (path != null) {
-			System.out.print(" FOLLOWING: " + path + "...");
+			System.out.print(" PATH: " + path + "...");
 			System.out.println(" SUCCEEDED!");
 			return State.SUCCEEDED;
 		}

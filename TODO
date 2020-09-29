@@ -85,21 +85,19 @@ Decorators:
 - Timer
 	- Needs to loop through
 
-- Subtract 1 from battery at every task
-
-- Roomba stops at dock
-- Done general runs when it shouldn't
-
 Simulation
 	- Random Generation
 	
-****************** AWAITING IMPLEMENTAION ******************
+
+	
 GENERAL CLEANUP
 - Brackets
 - Access Keywords
 - Documentation
 - TODO
 - README
+****************** AWAITING IMPLEMENTAION ******************
+
 
 REFERENCE GENERIC CONSTRUCTOR/METHOD RETRIEVAL
 /*

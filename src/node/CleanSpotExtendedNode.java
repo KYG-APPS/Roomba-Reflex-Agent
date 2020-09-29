@@ -37,6 +37,7 @@ public class CleanSpotExtendedNode extends TreeNode {
 		blackBoard.setBatteryLevel(blackBoard.getBatteryLevel() - 1);
 		if (this.remaining_cycles == 0) {
 			this.remaining_cycles = 35;
+			blackBoard.setDustySpot(false);
 			return State.SUCCEEDED;
 		}
 		return State.RUNNING;

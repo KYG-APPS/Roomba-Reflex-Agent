@@ -33,14 +33,15 @@ public class UntilSucceedsNode extends TreeNode{
 		State state;
 		try {
 			method = child.getTreeNodeType().getClassType().getMethod("run");
-			do {
 			state = (State)(method.invoke(child));
-			} while(!state.equals(State.SUCCEEDED));
+			if (state.equals(State.SUCCEEDED)) {
+				return State.SUCCEEDED;
+			}
 		} catch (Exception e) {
 			System.out.println("Error Running Logical Negation Node. "
 					+ "Exiting...");
 		}
-		return State.SUCCEEDED;
+		return State.RUNNING;
 	}
 	
 }

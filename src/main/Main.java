@@ -28,12 +28,15 @@ public class Main {
 		Roomba roomba = new Roomba(root);
 		
 		roomba.setSpot(true);
+		roomba.setDustySpot(true);
 		roomba.setGeneral(true);
 
+		int cycle = 1;
 		/** Run simulation cycles */
-		for (int i = 0; i < 72; i++) {
-			System.out.println("---------- Running Cycle " + i + " ----------");
+		while(roomba.getBatteryLevel() >= 28) {
+			System.out.println("---------- Running Cycle " + cycle + " ----------");
 			roomba.runCycle();
+			cycle++;
 			System.out.println();
 		}
 	}
