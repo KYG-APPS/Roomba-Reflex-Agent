@@ -15,9 +15,7 @@ public class TreeGenerator {
 	/**
 	 * Constructor for TreeGenerator
 	 */
-	public TreeGenerator() {
-		
-	}
+	public TreeGenerator(){}
 	
 	/** 
 	 * @return a an instance of a BehaviorTree as specified by 
@@ -36,14 +34,18 @@ public class TreeGenerator {
 	 */
 	private TreeNode createNode(BehaviorTreeStructure node, 
 			BlackBoard blackBoard) {
+
+		System.out.println("Created " + node.getDescription() + " .\n");
 		
 		/** Retrieve Children */
 		BehaviorTreeStructure[] children = node.getChildren();
 		
 		/** Create Children */
 		ArrayList<TreeNode> createdChildren = new ArrayList<TreeNode>();
-		for (BehaviorTreeStructure t: children) {
-			createdChildren.add(createNode(t, blackBoard));
+		if (children != null) {
+			for (BehaviorTreeStructure t: children) {
+				createdChildren.add(createNode(t, blackBoard));
+			}
 		}
 		
 		/** Make Node */

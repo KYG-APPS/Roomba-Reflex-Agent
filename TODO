@@ -1,6 +1,7 @@
 Plan for HW 1 - Simple Reflex Agent
 
 ****************** DONE ******************
+
 enum State
 	- Success/Running/Failed states
 
@@ -10,8 +11,12 @@ enum TreeNodeType
 
 enum BehaviorTreeStructure
 	- Node arrangement of behavior tree for easy changing/updating
+	
+	
+class TreeGenerator:
+	generateTree();
+	createNode();
 
-* Done!
 abstract class TreeNode
 - Instance Variables:
 	- ArrayList children;
@@ -41,8 +46,8 @@ class Roomba:
 	- Roomba();
 	- int run_cycle();
 
-
 ****************** IN IMPLEMENTATION ******************
+
 * Need to implement run()
 Node Subclasses:
 - Selection
@@ -84,10 +89,6 @@ class BehaviorTree
 	
 ****************** AWAITING IMPLEMENTAION ******************
 
-	
-class TreeGenerator:
-	generateTreeFromEnum();
-
 Questions
 - How are situations generated?
 - Are DONE GENERAL/SPOT DONE just updaters?
@@ -99,25 +100,22 @@ GENERAL CLEANUP
 - Documentation
 
 REFERENCE GENERIC CONSTRUCTOR/METHOD RETRIEVAL
-
+/*
+public void testMethod() {
 	
+	TreeNode node;
+	Method method;
+	Constructor<?> constructor;
 	
-	/*
-	public void testMethod() {
-		
-		TreeNode node;
-		Method method;
-		Constructor<?> constructor;
-		
-		try {
-			constructor = TreeNodeType.DO_NOTHING.getClassType().getConstructor(String.class, BlackBoard.class);
-			node = (TreeNode) constructor.newInstance("yey", null);
-			method = TreeNodeType.DO_NOTHING.getClassType().getMethod("run");
-			method.invoke(node);
-			System.out.println("Success!");
-		} catch (Exception e) {
-			System.out.println("Error executing retrieved method in TreeGenerator.java. Exiting...");
-			System.exit(1);
-		}
+	try {
+		constructor = TreeNodeType.DO_NOTHING.getClassType().getConstructor(String.class, BlackBoard.class);
+		node = (TreeNode) constructor.newInstance("yey", null);
+		method = TreeNodeType.DO_NOTHING.getClassType().getMethod("run");
+		method.invoke(node);
+		System.out.println("Success!");
+	} catch (Exception e) {
+		System.out.println("Error executing retrieved method in TreeGenerator.java. Exiting...");
+		System.exit(1);
 	}
-	*/
+}
+*/
