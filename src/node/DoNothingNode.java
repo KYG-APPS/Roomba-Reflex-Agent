@@ -27,6 +27,8 @@ public class DoNothingNode extends TreeNode {
 	public State run() {
 		System.out.print("Running " + super.getDescriptor() + " NODE...");
 		System.out.println(" SUCCEEDED!");
+		BlackBoard blackBoard = super.getBlackBoard();
+		blackBoard.setBatteryLevel(blackBoard.getBatteryLevel() - 1);
 		return State.SUCCEEDED;
 	}
 	

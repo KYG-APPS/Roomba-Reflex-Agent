@@ -138,6 +138,7 @@ public class BlackBoard {
 		result += "\nBattery: " + this.batteryLevel;
 		result += "\nSpot: " + this.spot;
 		result += "\nGeneral: " + this.general;
+		result += "\nDusty Spot: " + this.dustySpot;
 		result += "\nHome Path: " + this.homePath;
 		return result;
 	}

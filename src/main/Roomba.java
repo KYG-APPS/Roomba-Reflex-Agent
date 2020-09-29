@@ -2,7 +2,6 @@ package main;
 
 import node.TreeNode;
 import tree.BehaviorTree;
-import tree.BlackBoard;
 import util.State;
 
 /**
@@ -21,8 +20,8 @@ public class Roomba {
 	 * @param rootNode - the root TreeNode of its BehaviorTree
 	 * @param blackBoard - the BlackBoard of its Behavior Tree
 	 */
-	public Roomba(TreeNode rootNode, BlackBoard blackBoard) {
-		behaviorTree = new BehaviorTree(rootNode, blackBoard);
+	public Roomba(TreeNode rootNode) {
+		behaviorTree = new BehaviorTree(rootNode);
 	}
 	
 	/**
@@ -30,5 +29,12 @@ public class Roomba {
 	 */
 	public State runCycle() {
 		return behaviorTree.runCycle();
+	}
+	
+	/**
+	 * @return the Battery Level of the this Roomba instance
+	 */
+	public int getBatteryLevel() {
+		return this.behaviorTree.getBlackBoard().getBatteryLevel();
 	}
 }

@@ -35,7 +35,7 @@ public class TreeGenerator {
 	private TreeNode createNode(BehaviorTreeStructure node, 
 			BlackBoard blackBoard) {
 
-		System.out.println("Created " + node.getDescription() + " .\n");
+//		System.out.println("Created " + node.getDescription() + ".\n");
 		
 		/** Retrieve Children */
 		BehaviorTreeStructure[] children = node.getChildren();

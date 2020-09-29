@@ -31,14 +31,14 @@ public class DockNode extends TreeNode {
 	public State run() {
 		System.out.print("Running " + super.getDescriptor() + " NODE...");
 		BlackBoard blackBoard = super.getBlackBoard();
+		System.out.println(" SUCCEEDED!");
+		System.out.println("\nBlackBoard before Docking: " + blackBoard);
 		blackBoard.setDustySpot(false);
 		blackBoard.setGeneral(false);
 		blackBoard.setSpot(false);
 		blackBoard.setHomePath(null);
-		System.out.println(" SUCCEEDED!");
-		
-		System.out.println("BlackBoard after Docking: " + blackBoard);
-		
+		blackBoard.setBatteryLevel(blackBoard.getBatteryLevel() - 1);
+		System.out.println("\nBlackBoard after Docking: " + blackBoard);
 		return State.SUCCEEDED;
 	}
 

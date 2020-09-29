@@ -24,9 +24,9 @@ public class BehaviorTree {
 	 * @param root - the root TreeNode of this BehaviorTree
 	 * @param blackBoard - the BlackBoard of this BehaviorTree
 	 */
-	public BehaviorTree(TreeNode root, BlackBoard blackBoard) {
+	public BehaviorTree(TreeNode root) {
 		this.root = root;
-		this.blackBoard = blackBoard;
+		this.blackBoard = root.getBlackBoard();
 	}
 	
 	/**

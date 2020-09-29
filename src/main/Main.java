@@ -1,8 +1,6 @@
 package main;
 
 import node.*;
-import util.*;
-import tree.BehaviorTree;
 import tree.TreeGenerator;
 
 /**
@@ -18,16 +16,22 @@ public class Main {
 	 * Main function of the program
 	 */
 	public static void main(String[] args) {
-		TreeGenerator generator = new TreeGenerator();
-		generator.generateTree();
+		testRoomba();
+	}
 
-		TreeNode node = new DoNothingNode(null, null);
-		BehaviorTree tree = new BehaviorTree(node, null);
-		State state = tree.runCycle();
-		if (state.equals(State.SUCCEEDED)) {
-			System.out.println("Success!");
-		} else {
-			System.out.println("Failure.");
+	private static void testRoomba() {
+		/** Create BehaviorTree from the predefined structure in the enum */
+		TreeGenerator generator = new TreeGenerator();
+		TreeNode root = generator.generateTree();
+
+		/** Create a Roomba with the BehaviorTree */
+		Roomba roomba = new Roomba(root);
+
+		/** Run simulation cycles */
+		for (int i = 0; i < 72; i++) {
+			System.out.println("---------- Running Cycle " + i + " ----------");
+			roomba.runCycle();
+			System.out.println();
 		}
 	}
 
