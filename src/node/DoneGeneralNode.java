@@ -26,6 +26,8 @@ public class DoneGeneralNode extends TreeNode {
 	 */
 	public State run() {
 		System.out.print("Running " + super.getDescriptor() + " NODE...");
+		BlackBoard blackBoard = super.getBlackBoard();
+		blackBoard.setBatteryLevel(blackBoard.getBatteryLevel() - 1);
 		super.getBlackBoard().setGeneral(false);
 		System.out.println(" SUCCEEDED!");
 		return State.SUCCEEDED;

@@ -29,6 +29,8 @@ public class GoHomeNode extends TreeNode {
 	 */
 	public State run() {
 		System.out.print("Running " + super.getDescriptor() + " NODE...");
+		BlackBoard blackBoard = super.getBlackBoard();
+		blackBoard.setBatteryLevel(blackBoard.getBatteryLevel() - 1);
 		String path = super.getBlackBoard().getHomePath();
 		if (path != null) {
 			System.out.print(" FOLLOWING: " + path + "...");

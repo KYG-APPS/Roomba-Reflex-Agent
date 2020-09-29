@@ -33,6 +33,8 @@ public class CleanSpotExtendedNode extends TreeNode {
 	 */
 	public State run() {
 		this.remaining_cycles--;
+		BlackBoard blackBoard = super.getBlackBoard();
+		blackBoard.setBatteryLevel(blackBoard.getBatteryLevel() - 1);
 		if (this.remaining_cycles == 0) {
 			this.remaining_cycles = 35;
 			return State.SUCCEEDED;

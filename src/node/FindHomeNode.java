@@ -35,6 +35,8 @@ public class FindHomeNode extends TreeNode {
 				"Unbelievably Efficiently Calculated Optimal Path Home :)"
 				);
 		System.out.println(" SUCCEEDED!");
+		BlackBoard blackBoard = super.getBlackBoard();
+		blackBoard.setBatteryLevel(blackBoard.getBatteryLevel() - 1);
 		return State.SUCCEEDED;
 	}
 	
