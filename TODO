@@ -45,17 +45,17 @@ Decorators:
 - Until Fails
 - Timer
 
-	
-****************** AWAITING IMPLEMENTAION ******************
+* Need to implement runCycle()
 class BehaviorTree
 - Instance Variables:
-	- Node root;
+	- TreeNode root;
 	- HashMap<String, String> blackboard;
 - Methods:
 	- BehaviorTree();
-	- int run_cycle();
+	- int runCycle();
 	- HashMap<String, String> get_blackboard()
-
+	
+****************** AWAITING IMPLEMENTAION ******************
 class Roomba:
 - Instance Variables:
 	- BehaviorTree behavior_tree;
@@ -66,3 +66,6 @@ class Roomba:
 
 enum BehaviorTreeStructure
 	- Node arrangement of behavior tree for easy changing/updating
+	
+class TreeGenerator:
+	static generateTreeFromEnum();

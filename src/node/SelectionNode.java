@@ -24,4 +24,8 @@ public class SelectionNode extends TreeNode {
 		return null;
 	}
 	
+	public static void test() {
+		
+	}
+	
 }

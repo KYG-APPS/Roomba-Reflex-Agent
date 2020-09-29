@@ -4,7 +4,8 @@ package tree;
  * BlackBoard.java
  * @author Kevin Gao on 2020-9-29
  *
- * Implementation of the BlackBoard of the BehaviorTree
+ * Implementation of the inter-node communication mechanism, one per tree
+ *  
  * Necessary because Java does not support non-homegenous pairs
  * (Sorry! I will use Python next time :) )
  */
