@@ -4,21 +4,21 @@ import util.State;
 import util.TreeNodeType;
 
 /**
- * SelectionNode.java
+ * SpotNode.java
  * @author Kevin Gao on 2020-9-27
  *
- * Implementation of the Selection Composite TreeNode
+ * Implementation of the Spot Condition TreeNode
  */
-public class SelectionNode extends TreeNode {
+public class SpotNode extends TreeNode {
 
 	/**
-	 * Constructor for SelectionNode
+	 * Constructor for SpotNode
 	 * @param descriptor - custom description of the purpose of this TreeNode
 	 */
-	public SelectionNode(String descriptor) {
-		super(descriptor, TreeNodeType.SELECTION);
+	public SpotNode(String descriptor) {
+		super(descriptor, TreeNodeType.SPOT);
 	}
-	
+
 	// TODO: Implement Order
 	public State run() {
 		return null;

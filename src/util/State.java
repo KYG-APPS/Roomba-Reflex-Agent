@@ -8,8 +8,26 @@ package util;
  */
 public enum State {
 	
-	SUCCEEDED,
-	FAILED,
-	RUNNING;
+	SUCCEEDED("SUCCEEDED"),
+	FAILED("FAILED"),
+	RUNNING("RUNNING");
+	
+	/** text description of this State */
+	private String description;
+	
+	/**
+	 * Constructor for State
+	 * @param description - text description of this state
+	 */
+	State(String description) {
+		this.description = description;
+	}
+	
+	/**
+	 * @return text description of this state
+	 */
+	public String getDescription() {
+		return this.description;
+	}
 	
 }

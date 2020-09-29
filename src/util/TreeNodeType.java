@@ -12,13 +12,33 @@ import node.*;
 public enum TreeNodeType {
 	
 	/** Initialization of all TreeNodes with their corresponding descriptors */
+	
+	/** Composites */
 	SELECTION("selection", SelectionNode.class),
 	SEQUENCE("sequence", SequenceNode.class),
 	PRIORITY("priority", PriorityNode.class),
+	
+	/** Decorators */
 	LOGICAL_NEGATION("logical negation", LogicalNegationNode.class),
 	UNTIL_SUCCEEDS("until succeeds", UntilSucceedsNode.class),
 	UNTIL_FAILS("until fails", UntilFailsNode.class),
-	TIMER("timer", TimerNode.class);
+	TIMER("timer", TimerNode.class),
+	
+	/** Tasks */
+	FIND_HOME("find home", FindHomeNode.class),
+	GO_HOME("go home", GoHomeNode.class),
+	DOCK("dock", DockNode.class),
+	CLEAN_SPOT("clean_spot", CleanSpotNode.class),
+	DONE_SPOT("done spot", DoneSpotNode.class),
+	CLEAN("clean", CleanNode.class),
+	DONE_GENERAL("done general", DoneGeneralNode.class),
+	DO_NOTHING("do nothing", DoNothingNode.class),
+	
+	/** Conditions */
+	BATTERY_GREATER_THAN("battery greater than", BatteryGreaterThanNode.class),
+	SPOT("spot", SpotNode.class),
+	GENERAL("general", GeneralNode.class),
+	DUSTY_SPOT("dusty spot", DustySpotNode.class);
 	
 	/** Identifier String for the TreeNode */
 	private final String identifier;
@@ -31,7 +51,7 @@ public enum TreeNodeType {
 	 * @param identifier - Identifier String for the TreeNode
 	 * @param classType - Corresponding Class of the TreeNode
 	 */
-	TreeNodeType(String identifier, Class<?>  classType){
+	TreeNodeType(String identifier, Class<?>  classType) {
 		this.identifier = identifier;
 		this.classType = classType;
 	}
@@ -46,7 +66,7 @@ public enum TreeNodeType {
 	/**
 	 * @return the Class associated with this TreeNodeType
 	 */
-	public Class<?> getClassType(){
+	public Class<?> getClassType() {
 		return this.classType;
 	}
 }

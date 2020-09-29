@@ -13,6 +13,7 @@ import util.State;
  */
 public class Roomba {
 
+	/** BehaviorTree for this Roomba */
 	private BehaviorTree behaviorTree;
 	
 	/**

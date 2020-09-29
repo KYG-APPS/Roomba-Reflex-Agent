@@ -4,21 +4,21 @@ import util.State;
 import util.TreeNodeType;
 
 /**
- * SelectionNode.java
+ * GeneralNode.java
  * @author Kevin Gao on 2020-9-27
  *
- * Implementation of the Selection Composite TreeNode
+ * Implementation of the General Condition TreeNode
  */
-public class SelectionNode extends TreeNode {
+public class GeneralNode extends TreeNode {
 
 	/**
-	 * Constructor for SelectionNode
+	 * Constructor for GeneralNode
 	 * @param descriptor - custom description of the purpose of this TreeNode
 	 */
-	public SelectionNode(String descriptor) {
-		super(descriptor, TreeNodeType.SELECTION);
+	public GeneralNode(String descriptor) {
+		super(descriptor, TreeNodeType.GENERAL);
 	}
-	
+
 	// TODO: Implement Order
 	public State run() {
 		return null;

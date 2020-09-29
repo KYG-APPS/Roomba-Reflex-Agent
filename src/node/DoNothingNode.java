@@ -4,21 +4,21 @@ import util.State;
 import util.TreeNodeType;
 
 /**
- * SelectionNode.java
+ * DoNothingNode.java
  * @author Kevin Gao on 2020-9-27
  *
- * Implementation of the Selection Composite TreeNode
+ * Implementation of the Do Nothing Task TreeNode
  */
-public class SelectionNode extends TreeNode {
+public class DoNothingNode extends TreeNode {
 
 	/**
-	 * Constructor for SelectionNode
+	 * Constructor for DoNothingNode
 	 * @param descriptor - custom description of the purpose of this TreeNode
 	 */
-	public SelectionNode(String descriptor) {
-		super(descriptor, TreeNodeType.SELECTION);
+	public DoNothingNode(String descriptor) {
+		super(descriptor, TreeNodeType.DO_NOTHING);
 	}
-	
+
 	// TODO: Implement Order
 	public State run() {
 		return null;

@@ -4,21 +4,21 @@ import util.State;
 import util.TreeNodeType;
 
 /**
- * SelectionNode.java
+ * DoneGeneralNode.java
  * @author Kevin Gao on 2020-9-27
  *
- * Implementation of the Selection Composite TreeNode
+ * Implementation of the Done General Task TreeNode
  */
-public class SelectionNode extends TreeNode {
+public class DoneGeneralNode extends TreeNode {
 
 	/**
-	 * Constructor for SelectionNode
+	 * Constructor for DoneGeneralNode
 	 * @param descriptor - custom description of the purpose of this TreeNode
 	 */
-	public SelectionNode(String descriptor) {
-		super(descriptor, TreeNodeType.SELECTION);
+	public DoneGeneralNode(String descriptor) {
+		super(descriptor, TreeNodeType.DONE_GENERAL);
 	}
-	
+
 	// TODO: Implement Order
 	public State run() {
 		return null;

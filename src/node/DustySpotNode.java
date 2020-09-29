@@ -4,21 +4,21 @@ import util.State;
 import util.TreeNodeType;
 
 /**
- * SelectionNode.java
+ * DustySpotNode.java
  * @author Kevin Gao on 2020-9-27
  *
- * Implementation of the Selection Composite TreeNode
+ * Implementation of the DustySpot Condition TreeNode
  */
-public class SelectionNode extends TreeNode {
+public class DustySpotNode extends TreeNode {
 
 	/**
-	 * Constructor for SelectionNode
+	 * Constructor for DustySpotNode
 	 * @param descriptor - custom description of the purpose of this TreeNode
 	 */
-	public SelectionNode(String descriptor) {
-		super(descriptor, TreeNodeType.SELECTION);
+	public DustySpotNode(String descriptor) {
+		super(descriptor, TreeNodeType.DUSTY_SPOT);
 	}
-	
+
 	// TODO: Implement Order
 	public State run() {
 		return null;
