@@ -31,18 +31,16 @@ abstract class TreeNode
 Node Subclasses:
 * Need to implement run()
 - Selection
-
-* Need to implement
+- Sequence
 - Priority
 	- Needs priority identifier
-- Sequence
-- Random Selection
-- Random Sequence
-
 Decorators:
 - Logical Negation
 - Until Succeeds
 - Until Fails
+
+* Need to implement
+
 - Timer
 
 class BehaviorTree

@@ -12,7 +12,13 @@ import node.*;
 public enum TreeNodeType {
 	
 	/** Initialization of all TreeNodes with their corresponding descriptors */
-	SELECTION("Selection", SelectionNode.class);
+	SELECTION("selection", SelectionNode.class),
+	SEQUENCE("sequence", SequenceNode.class),
+	PRIORITY("priority", PriorityNode.class),
+	LOGICAL_NEGATION("logical negation", LogicalNegationNode.class),
+	UNTIL_SUCCEEDS("until succeeds", UntilSucceedsNode.class),
+	UNTIL_FAILS("until fails", UntilFailsNode.class),
+	TIMER("timer", TimerNode.class);
 	
 	/** Identifier String for the TreeNode */
 	private final String identifier;

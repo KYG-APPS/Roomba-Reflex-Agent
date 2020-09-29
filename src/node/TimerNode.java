@@ -4,21 +4,21 @@ import util.State;
 import util.TreeNodeType;
 
 /**
- * SelectionNode.java
+ * TimerNode.java
  * @author Kevin Gao on 2020-9-27
  *
- * Implementation of the Selection Composite TreeNode
+ * Implementation of the Timer Decorator TreeNode
  */
-public class SelectionNode extends TreeNode {
+public class TimerNode extends TreeNode {
 
 	/**
-	 * Constructor for SelectionNode
+	 * Constructor for TimerNode
 	 * @param descriptor - custom description of the purpose of this TreeNode
 	 */
-	public SelectionNode(String descriptor) {
-		super(descriptor, TreeNodeType.SELECTION);
+	public TimerNode(String descriptor) {
+		super(descriptor, TreeNodeType.TIMER);
 	}
-	
+
 	// TODO: Implement Order
 	public State run() {
 		return null;
