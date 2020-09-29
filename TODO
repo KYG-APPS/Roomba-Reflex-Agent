@@ -78,7 +78,6 @@ class BehaviorTree
 - Methods:
 	- BehaviorTree();
 	- int runCycle();
-	- HashMap<String, String> get_blackboard()
 	
 ****************** AWAITING IMPLEMENTAION ******************
 enum BehaviorTreeStructure

@@ -22,7 +22,8 @@ public class DoNothingNode extends TreeNode {
 
 	// TODO: Implement Order
 	public State run() {
-		return null;
+		System.out.println("Doing Nothing... ");
+		return State.SUCCEEDED;
 	}
 	
 }

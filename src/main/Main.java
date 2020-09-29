@@ -1,5 +1,7 @@
 package main;
 
+import tree.TreeGenerator;
+
 /**
  * main.java
  * @author Kevin Gao (kgao03) on 2020-9-27
@@ -13,7 +15,8 @@ public class Main {
 	 * Main function of the program
 	 */
 	public static void main(String[] args) {
-		System.out.println("Hello World!");
+		TreeGenerator generator = new TreeGenerator();
+		generator.testMethod();
 	}
 	
 }
