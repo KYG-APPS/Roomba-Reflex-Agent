@@ -47,6 +47,8 @@ Node subclasses:
 	- GO_HOME
 	- DOCK
 	- CLEAN
+	- CLEAN_SPOT
+	- CLEAN_SPOT_EXTENDED
 - Conditions:
 	- BATTERY_LESS_THAN
 	- SPOT
@@ -82,8 +84,8 @@ class Roomba:
 Decorators:
 - Timer
 	- Needs to loop through
-Tasks:
-- CLEAN_SPOT
+
+- Subtract 1 from battery at every task
 	
 ****************** AWAITING IMPLEMENTAION ******************
 Simulation

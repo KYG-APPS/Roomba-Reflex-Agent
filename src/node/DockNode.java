@@ -21,7 +21,7 @@ public class DockNode extends TreeNode {
 	}
 
 	/**
-	 * Docks the Roomba at the charging station
+	 * Docks the Roomba at the charging station and resets the BlackBoard
 	 * 
 	 * Could fail in reality, but the focus of this program is BehaviorTrees,
 	 * so we assume it works
@@ -30,7 +30,15 @@ public class DockNode extends TreeNode {
 	 */
 	public State run() {
 		System.out.print("Running " + super.getDescriptor() + " NODE...");
+		BlackBoard blackBoard = super.getBlackBoard();
+		blackBoard.setDustySpot(false);
+		blackBoard.setGeneral(false);
+		blackBoard.setSpot(false);
+		blackBoard.setHomePath(null);
 		System.out.println(" SUCCEEDED!");
+		
+		System.out.println("BlackBoard after Docking: " + blackBoard);
+		
 		return State.SUCCEEDED;
 	}
 

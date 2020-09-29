@@ -129,5 +129,17 @@ public class BlackBoard {
 	public void setHomePath(String homePath) {
 		this.homePath = homePath;
 	}
+	
+	/**
+	 * @return String representation of this BlackBoard
+	 */
+	public String toString() {
+		String result = "";
+		result += "\nBattery: " + this.batteryLevel;
+		result += "\nSpot: " + this.spot;
+		result += "\nGeneral: " + this.general;
+		result += "\nHome Path: " + this.homePath;
+		return result;
+	}
 
 }

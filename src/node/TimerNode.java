@@ -1,5 +1,7 @@
 package node;
 
+import java.lang.reflect.Method;
+
 import tree.BlackBoard;
 import util.State;
 import util.TreeNodeType;
@@ -20,9 +22,24 @@ public class TimerNode extends TreeNode {
 		super(descriptor, TreeNodeType.TIMER, blackBoard);
 	}
 
-	// TODO: Implement Order
+	/**
+	 * Executes the child TreeNode for the given number of cycles
+	 * 
+	 * @return State.SUCCEEDED if all cycles are finished; otherwise, returns
+	 * State.RUNNING
+	 */
 	public State run() {
-		return null;
+		TreeNode child = super.getChildren().get(0);
+		Method method;
+		State state = null;
+		try {
+			method = child.getTreeNodeType().getClassType().getMethod("run");
+			state = (State)(method.invoke(child));
+		} catch (Exception e) {
+			System.out.println("Error running Timer Node. Exiting...");
+			System.exit(1);
+		}	
+		return state;
 	}
 	
 }

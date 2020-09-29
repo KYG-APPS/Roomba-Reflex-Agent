@@ -29,6 +29,7 @@ public enum TreeNodeType {
 	GO_HOME("go home", GoHomeNode.class),
 	DOCK("dock", DockNode.class),
 	CLEAN_SPOT("clean_spot", CleanSpotNode.class),
+	CLEAN_SPOT_EXTENDED("clean_spot_extended", CleanSpotExtendedNode.class),
 	DONE_SPOT("done spot", DoneSpotNode.class),
 	CLEAN("clean", CleanNode.class),
 	DONE_GENERAL("done general", DoneGeneralNode.class),

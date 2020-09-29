@@ -5,23 +5,23 @@ import util.State;
 import util.TreeNodeType;
 
 /**
- * CleanSpotNode.java
+ * CleanSpotExtendedNode.java
  * @author Kevin Gao on 2020-9-27
  *
- * Implementation of the Clean Spot Task TreeNode
+ * Implementation of the Clean Spot Extended Task TreeNode
  */
-public class CleanSpotNode extends TreeNode {
-	
+public class CleanSpotExtendedNode extends TreeNode {
+
 	/** Number of remaining 'runs' until State.SUCCEEDED is returned */
 	private int remaining_cycles;
 	
 	/**
-	 * Constructor for CleanSpotNode
+	 * Constructor for CleanSpotExtendedNode
 	 * @param descriptor - custom description of the purpose of this TreeNode
 	 */
-	public CleanSpotNode(String descriptor, BlackBoard blackBoard) {
-		super(descriptor, TreeNodeType.CLEAN_SPOT, blackBoard);
-		this.remaining_cycles = 20;
+	public CleanSpotExtendedNode(String descriptor, BlackBoard blackBoard) {
+		super(descriptor, TreeNodeType.CLEAN_SPOT_EXTENDED, blackBoard);
+		this.remaining_cycles = 35;
 	}
 
 	/**
@@ -34,7 +34,7 @@ public class CleanSpotNode extends TreeNode {
 	public State run() {
 		this.remaining_cycles--;
 		if (this.remaining_cycles == 0) {
-			this.remaining_cycles = 20;
+			this.remaining_cycles = 35;
 			return State.SUCCEEDED;
 		}
 		return State.RUNNING;
