@@ -1,16 +1,12 @@
 Plan for HW 1 - Simple Reflex Agent
 
-* Update as Node Subclasses are added
-enum TreeNodeType
-	- string identifier
-	- ClassType
-
-* Done!
+****************** DONE ******************
 enum State
 	- Success/Running/Failed states
 
-enum BehaviorTreeStructure
-	- Node arrangement of behavior tree for easy changing/updating
+enum TreeNodeType
+	- string identifier
+	- ClassType
 
 * Done!
 abstract class TreeNode
@@ -27,9 +23,18 @@ abstract class TreeNode
 	- public abstract State run();
 * All subclasses of node should implement their own static run function.
 
-* In implementation
-Node Subclasses:
+class BlackBoard
+- Instance Variables
+	- int batteryLevel;
+	- boolean spot;
+	- boolean general;
+	- boolean dustySpot;
+	- String homePath;
+
+
+****************** IN IMPLEMENTATION ******************
 * Need to implement run()
+Node Subclasses:
 - Selection
 - Sequence
 - Priority
@@ -38,11 +43,10 @@ Decorators:
 - Logical Negation
 - Until Succeeds
 - Until Fails
-
-* Need to implement
-
 - Timer
 
+	
+****************** AWAITING IMPLEMENTAION ******************
 class BehaviorTree
 - Instance Variables:
 	- Node root;
@@ -59,3 +63,6 @@ class Roomba:
 	- Roomba();
 	- int run_cycle();
 	- boolean generate_simulated_scenario();
+
+enum BehaviorTreeStructure
+	- Node arrangement of behavior tree for easy changing/updating
