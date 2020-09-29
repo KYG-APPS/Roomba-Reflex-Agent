@@ -1,5 +1,7 @@
 package node;
 
+import java.lang.reflect.Method;
+
 import tree.BlackBoard;
 import util.State;
 import util.TreeNodeType;
@@ -20,9 +22,25 @@ public class UntilSucceedsNode extends TreeNode{
 		super(descriptor, TreeNodeType.UNTIL_SUCCEEDS, blackBoard);
 	}
 
-	// TODO: Implement Order
+	/**
+	 * Repeatedly run the singular child of this TreeNode until it returns
+	 * State.SUCCEEDED
+	 * @return State.SUCCEEDED when the child returns State.SUCCEEDED
+	 */
 	public State run() {
-		return null;
+		TreeNode child = super.getChildren().get(0);
+		Method method;
+		State state;
+		try {
+			method = child.getTreeNodeType().getClassType().getMethod("run");
+			do {
+			state = (State)(method.invoke(child));
+			} while(!state.equals(State.SUCCEEDED));
+		} catch (Exception e) {
+			System.out.println("Error Running Logical Negation Node. "
+					+ "Exiting...");
+		}
+		return State.SUCCEEDED;
 	}
 	
 }

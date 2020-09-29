@@ -20,9 +20,15 @@ public class DoneSpotNode extends TreeNode {
 		super(descriptor, TreeNodeType.DONE_SPOT, blackBoard);
 	}
 
-	// TODO: Implement Order
+	/**
+	 * Updates the BlackBoard 'spot' key to 'false'
+	 * @return State.SUCCEEDED after updating
+	 */
 	public State run() {
-		return null;
+		System.out.print("Running " + super.getDescriptor() + " NODE...");
+		super.getBlackBoard().setSpot(false);
+		System.out.println(" SUCCEEDED!");
+		return State.SUCCEEDED;
 	}
 	
 }

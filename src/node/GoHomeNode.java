@@ -20,9 +20,23 @@ public class GoHomeNode extends TreeNode {
 		super(descriptor, TreeNodeType.GO_HOME, blackBoard);
 	}
 
-	// TODO: Implement Order
+	/**
+	 * Attempts to follow the 'home path' stored in the BlackBoard 
+	 * back to the charging station
+	 * 
+	 * @return State.SUCCEEDED if a valid path was found and executed;
+	 * otherwise, returns State.FAILED
+	 */
 	public State run() {
-		return null;
+		System.out.print("Running " + super.getDescriptor() + " NODE...");
+		String path = super.getBlackBoard().getHomePath();
+		if (path != null) {
+			System.out.print(" FOLLOWING: " + path + "...");
+			System.out.println(" SUCCEEDED!");
+			return State.SUCCEEDED;
+		}
+		System.out.println(" FAILED.");
+		return State.FAILED;
 	}
 	
 }

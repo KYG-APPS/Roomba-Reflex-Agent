@@ -20,9 +20,22 @@ public class FindHomeNode extends TreeNode {
 		super(descriptor, TreeNodeType.FIND_HOME, blackBoard);
 	}
 
-	// TODO: Implement Order
+	/**
+	 * Plan a path to 'home' i.e. the charging base and 
+	 * saves it in the BlackBoard
+	 * 
+	 * Could fail in reality, but the focus of this program is BehaviorTrees,
+	 * so we assume it works
+	 * 
+	 * @return State.SUCCEEDED on successful calculation
+	 */
 	public State run() {
-		return null;
+		System.out.print("Running " + super.getDescriptor() + " NODE...");
+		super.getBlackBoard().setHomePath(
+				"Unbelievably Efficiently Calculated Optimal Path Home :)"
+				);
+		System.out.println(" SUCCEEDED!");
+		return State.SUCCEEDED;
 	}
 	
 }

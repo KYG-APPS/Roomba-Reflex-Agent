@@ -24,10 +24,12 @@ public enum BehaviorTreeStructure {
 	/** Specify TreeNodes Bottom-Up (Leaf-First) */
 
 	/** Return to Charging Base */
-	BATTERY_CHECK_1(TreeNodeType.BATTERY_LESS_THAN, null, "1st Battery Check"),
-	FIND_HOME(TreeNodeType.FIND_HOME, null, "Find Path Home"),
-	GO_HOME(TreeNodeType.GO_HOME, null, "Follow Path Home"),
-	DOCK(TreeNodeType.DOCK, null, "Dock at Charging Station"),
+	BATTERY_CHECK_1(TreeNodeType.BATTERY_LESS_THAN,
+			null, 
+			"PRELIMINARY BATTERY CHECK CONDITION"),
+	FIND_HOME(TreeNodeType.FIND_HOME, null, "FIND HOME TASK"),
+	GO_HOME(TreeNodeType.GO_HOME, null, "GO HOME TASK"),
+	DOCK(TreeNodeType.DOCK, null, "DOCK TASK"),
 	
 	ENSURE_SUFFICIENT_BATTERY(TreeNodeType.SEQUENCE, 
 			new BehaviorTreeStructure[] {
@@ -35,61 +37,63 @@ public enum BehaviorTreeStructure {
 					FIND_HOME,
 					GO_HOME,
 					DOCK
-			}, "Ensure Sufficient Battery"),
+			}, "PRELMINARY BATTERY SEQUENCE"),
 
 
 	/** Spot Command */
-	SPOT_CHECK(TreeNodeType.SPOT, null, "Check Spot Value"),
-	CLEAN_SPOT(TreeNodeType.CLEAN_SPOT, null, "Clean Spot"),
-	DONE_SPOT(TreeNodeType.DONE_SPOT, null, "Update Spot Value"),
+	SPOT_CHECK(TreeNodeType.SPOT, null, "SPOT CONDITION"),
+	CLEAN_SPOT(TreeNodeType.CLEAN_SPOT, null, "CLEAN SPOT TASK"),
+	DONE_SPOT(TreeNodeType.DONE_SPOT, null, "DONE SPOT TASK"),
 	
 	CLEAN_SPOT_TIMER(TreeNodeType.TIMER, 
 			new BehaviorTreeStructure[] {
 					CLEAN_SPOT
 			}, 
-			"20-cycle timer for CLEAN_SPOT"),
+			"20-CYCLE CLEAN_SPOT TIMER"),
 	
 	SPOT_COMMAND(TreeNodeType.SEQUENCE, 
 			new BehaviorTreeStructure[] {
 					SPOT_CHECK,
 					CLEAN_SPOT_TIMER,
 					DONE_SPOT
-			}, "Run Spot Command"),
+			}, "SPOT COMMAND SEQUENCE"),
 
 
 	/** General Cleaning Command */
-	GENERAL_CHECK(TreeNodeType.GENERAL, null, "Check General Value"),
-	BATTERY_CHECK_2(TreeNodeType.BATTERY_LESS_THAN, null, "2nd Battery Check"),
-	DUSTY_SPOT_CHECK(TreeNodeType.DUSTY_SPOT, null, "Check Dusty Spot Value"),
-	CLEAN_SPOT_2(TreeNodeType.CLEAN_SPOT, null, "Clean Spot"),
+	GENERAL_CHECK(TreeNodeType.GENERAL, null, "GENERAL CONDITION"),
+	BATTERY_CHECK_2(TreeNodeType.BATTERY_LESS_THAN, 
+			null, 
+			"BATTERY CHECK CONDITION"),
+	DUSTY_SPOT_CHECK(TreeNodeType.DUSTY_SPOT, null, "DUSTY SPOT CONDITION"),
+	CLEAN_SPOT_2(TreeNodeType.CLEAN_SPOT, null, "CLEAN SPOT 2 TASK"),
 	CLEAN(TreeNodeType.CLEAN, null, "Clean"),
-	DONE_GENERAL(TreeNodeType.DONE_GENERAL, null, "Update General Value"),
+	DONE_GENERAL(TreeNodeType.DONE_GENERAL, null, "DONE GENERAL TASK"),
 	
 	CLEAN_SPOT_TIMER_2(TreeNodeType.TIMER, 
 			new BehaviorTreeStructure[] {
 					CLEAN_SPOT_2
 			}, 
-			"35-cycle timer for CLEAN_SPOT_2"),
+			"35-CYCLE CLEAN_SPOT_2 TIMER"),
 	
 	DUSTY_SPOT_SEQUENCE(TreeNodeType.SEQUENCE, 
 			new BehaviorTreeStructure[] {
 					DUSTY_SPOT_CHECK,
 					CLEAN_SPOT_TIMER_2
 			}, 
-			"Complete Dusty Spot"),
+			"DUSTY SPOT SEQUENCE"),
 	
 	GENERAL_CLEAN_SELECTION(TreeNodeType.SELECTION, 
 			new BehaviorTreeStructure[] {
 					DUSTY_SPOT_SEQUENCE,
 					CLEAN
 			}, 
-			"Dusty Spot Selection"),
+			"GENERAL CLEAN SELECTION"),
 	
 	BATTERY_NEGATION(TreeNodeType.LOGICAL_NEGATION, 
 			new BehaviorTreeStructure[] {
 					BATTERY_CHECK_2
 			}, 
-			"Negate Battery Check Value"),
+			"BATTERY CHECK NEGATION DECORATOR"),
 			
 	
 	GENERAL_CLEAN_LOOP(TreeNodeType.SEQUENCE, 
@@ -97,38 +101,38 @@ public enum BehaviorTreeStructure {
 					BATTERY_NEGATION,
 					GENERAL_CLEAN_SELECTION
 			}, 
-			"Loop of General Clean"),
+			"GENERAL CLEAN SEQUENCE"),
 	
 	GENERAL_CLEAN_UNTIL_FAIL(TreeNodeType.UNTIL_FAILS, 
 			new BehaviorTreeStructure[] {
 					GENERAL_CLEAN_LOOP
 			}, 
-			"Loop General Clean until Battery < 30"),
+			"GENERAL CLEAN UNTIL FAIL DECORATOR"),
 	
 	GENERAL_CLEAN_LOOP_AND_UPDATE(TreeNodeType.SEQUENCE, 
 			new BehaviorTreeStructure[] {
 					GENERAL_CLEAN_UNTIL_FAIL,
 					DONE_GENERAL
 			}, 
-			"General Clean and BlackBoard Update"),
+			"GENERAL CLEAN AND UPDATE SEQUENCE"),
 	
 	GENERAL_COMMAND(TreeNodeType.SEQUENCE, 
 			new BehaviorTreeStructure[] {
 					GENERAL_CHECK,
 					GENERAL_CLEAN_LOOP_AND_UPDATE
 			}, 
-			"Complete Sequence for the General Command"),
+			"COMPLETE GENERAL COMMAND SEQUENCE"),
 	
 	CLEANING_COMMAND_SELECTION(TreeNodeType.SELECTION, 
 			new BehaviorTreeStructure[] {
 					SPOT_COMMAND,
 					GENERAL_COMMAND
 			}, 
-			"Executes All Cleaning Commands"),
+			"ALL CLEANING COMMAND SELECTION"),
 
 
 	/** Do Nothing Command */
-	DO_NOTHING_COMMAND(TreeNodeType.DO_NOTHING, null, "Do Absolutely Nothing"),
+	DO_NOTHING_COMMAND(TreeNodeType.DO_NOTHING, null, "DO NOTHING TASK"),
 	
 	/** ROOT of the BehaviorTreeStructure */
 	ROOT(TreeNodeType.PRIORITY, 
@@ -137,7 +141,7 @@ public enum BehaviorTreeStructure {
 					CLEANING_COMMAND_SELECTION,
 					DO_NOTHING_COMMAND
 			}, 
-			"Root Priority Composite TreeNode");
+			"ROOT PRIORITY COMPOSITE");
 
 
 	/** TreeNodeType of the TreeNode */

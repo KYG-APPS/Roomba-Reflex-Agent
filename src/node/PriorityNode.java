@@ -1,5 +1,8 @@
 package node;
 
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+
 import tree.BlackBoard;
 import util.State;
 import util.TreeNodeType;
@@ -20,9 +23,33 @@ public class PriorityNode extends TreeNode {
 		super(descriptor, TreeNodeType.PRIORITY, blackBoard);
 	}
 
-	// TODO: Implement Order
+	/**
+	 * Runs each child of this Priority TreeNode in order of Priority, 
+	 * immediately returning as soon as one returns State.SUCCEEDED or 
+	 * State.RUNNING.
+	 * @return State.SUCCEEDED if encountered first; STATE.RUNNING if encountered
+	 * first; otherwise, returns State.FAILED
+	 */
 	public State run() {
-		return null;
+		ArrayList<TreeNode> children = super.getChildren();
+
+		for (TreeNode child: children) {
+			Method method;
+			State state = null;
+			try {
+				method = child.getTreeNodeType().getClassType().getMethod("run");
+				state = (State)(method.invoke(child));
+				if (state.equals(State.RUNNING)) {
+					return State.RUNNING;
+				} else if (state.equals(State.SUCCEEDED)) {
+					return State.SUCCEEDED;
+				}
+			} catch (Exception e) {
+				System.out.println("Error Running Child of Selection Node. "
+						+ "Exiting...");
+			}
+		}
+		return State.FAILED;
 	}
 	
 }

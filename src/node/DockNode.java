@@ -20,9 +20,18 @@ public class DockNode extends TreeNode {
 		super(descriptor, TreeNodeType.DOCK, blackBoard);
 	}
 
-	// TODO: Implement Order
+	/**
+	 * Docks the Roomba at the charging station
+	 * 
+	 * Could fail in reality, but the focus of this program is BehaviorTrees,
+	 * so we assume it works
+	 * 
+	 * @return State.SUCCEEDED on successful docking
+	 */
 	public State run() {
-		return null;
+		System.out.print("Running " + super.getDescriptor() + " NODE...");
+		System.out.println(" SUCCEEDED!");
+		return State.SUCCEEDED;
 	}
-	
+
 }

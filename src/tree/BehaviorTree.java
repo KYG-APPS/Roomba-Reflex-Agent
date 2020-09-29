@@ -49,4 +49,11 @@ public class BehaviorTree {
 		return State.FAILED;
 	}
 	
+	/**
+	 * @return the BlackBoard object associated with this BehaviorTree
+	 */
+	public BlackBoard getBlackBoard() {
+		return this.blackBoard;
+	}
+	
 }

@@ -20,9 +20,15 @@ public class DoneGeneralNode extends TreeNode {
 		super(descriptor, TreeNodeType.DONE_GENERAL, blackBoard);
 	}
 
-	// TODO: Implement Order
+	/**
+	 * Updates the BlackBoard 'general' key to 'false'
+	 * @return State.SUCCEEDED after updating
+	 */
 	public State run() {
-		return null;
+		System.out.print("Running " + super.getDescriptor() + " NODE...");
+		super.getBlackBoard().setGeneral(false);
+		System.out.println(" SUCCEEDED!");
+		return State.SUCCEEDED;
 	}
 	
 }

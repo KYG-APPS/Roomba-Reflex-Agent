@@ -1,5 +1,7 @@
 package node;
 
+import java.lang.reflect.Method;
+
 import tree.BlackBoard;
 import util.State;
 import util.TreeNodeType;
@@ -20,9 +22,31 @@ public class LogicalNegationNode extends TreeNode {
 		super(descriptor, TreeNodeType.LOGICAL_NEGATION, blackBoard);
 	}
 
-	// TODO: Implement Order
+	/**
+	 * Runs the singular child of this TreeNode and negates the return State
+	 * @return the negated return State of the child
+	 */
 	public State run() {
-		return null;
+		TreeNode child = super.getChildren().get(0);
+		Method method;
+		State state = null;
+		try {
+			method = child.getTreeNodeType().getClassType().getMethod("run");
+			state = (State)(method.invoke(child));
+		} catch (Exception e) {
+			System.out.println("Error Running Logical Negation Node. "
+					+ "Exiting...");
+		}
+		
+		if (state.equals(State.SUCCEEDED)) {
+			return State.FAILED;
+		} else if (state.equals(State.FAILED)) {
+			return State.SUCCEEDED;
+		}
+		
+		System.out.println("Error: cannot negate value State.RUNNING");
+		System.exit(1);
+		return state;
 	}
 	
 }

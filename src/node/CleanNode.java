@@ -20,9 +20,18 @@ public class CleanNode extends TreeNode {
 		super(descriptor, TreeNodeType.CLEAN, blackBoard);
 	}
 
-	// TODO: Implement Order
+	/**
+	 * Executes a normal clean
+	 * 
+	 * Could fail in reality, but the focus of this program is BehaviorTrees,
+	 * so we assume it works
+	 * 
+	 * @return State.SUCCEEDED on successful cleaning
+	 */
 	public State run() {
-		return null;
+		System.out.print("Running " + super.getDescriptor() + " NODE...");
+		System.out.println(" SUCCEEDED!");
+		return State.SUCCEEDED;
 	}
 	
 }

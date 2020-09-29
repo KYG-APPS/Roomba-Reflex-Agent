@@ -20,9 +20,13 @@ public class DoNothingNode extends TreeNode {
 		super(descriptor, TreeNodeType.DO_NOTHING, blackBoard);
 	}
 
-	// TODO: Implement Order
+	/**
+	 * Executes the DO NOTHING command according to the spec
+	 * @return State.SUCCEEDED after successful execution
+	 */
 	public State run() {
-		System.out.println("Doing Nothing... ");
+		System.out.print("Running " + super.getDescriptor() + " NODE...");
+		System.out.println(" SUCCEEDED!");
 		return State.SUCCEEDED;
 	}
 	

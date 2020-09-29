@@ -32,14 +32,34 @@ abstract class TreeNode
 * All subclasses of node should implement their own static run function.
 Node subclasses:
 - Composites:
+	- Selection
+	- Sequence
+	- Priority
 - Decorators:
+	- Logical Negation
+	- Until Succeeds
+	- Until Fails
 - Tasks:
+	- DONE_GENERAL
+	- DONE_SPOT
+	- DO_NOTHING
+	- FIND_HOME
+	- GO_HOME
+	- DOCK
+	- CLEAN
 - Conditions:
 	- BATTERY_LESS_THAN
 	- SPOT
 	- GENERAL
 	- DUSTY_SPOT
 
+class BehaviorTree
+- Instance Variables:
+	- TreeNode root;
+	- HashMap<String, String> blackboard;
+- Methods:
+	- BehaviorTree();
+	- int runCycle();
 
 class BlackBoard:
 - Instance Variables
@@ -59,47 +79,19 @@ class Roomba:
 ****************** IN IMPLEMENTATION ******************
 
 * Need to implement run()
-Node Subclasses:
-- Selection
-- Sequence
-- Priority
-	- Needs priority identifier
 Decorators:
-- Logical Negation
-- Until Succeeds
-- Until Fails
 - Timer
+	- Needs to loop through
 Tasks:
-- FIND_HOME
-	- Writes to homePath
-- GO_HOME
-	- Reads from homePath
-- DOCK
 - CLEAN_SPOT
-- DONE_SPOT
-	- Writes to spot
-- CLEAN
-- DONE_GENERAL
-	- Writes to general
-- DO_NOTHING
-Conditions:
-
-
-* Need to implement runCycle()
-class BehaviorTree
-- Instance Variables:
-	- TreeNode root;
-	- HashMap<String, String> blackboard;
-- Methods:
-	- BehaviorTree();
-	- int runCycle();
 	
 ****************** AWAITING IMPLEMENTAION ******************
+Simulation
+	- Random Generation
 
 Questions
-- How are situations generated?
-- Are DONE GENERAL/SPOT DONE just updaters?
 - Do timer nodes stop execution of a cycle
+- How does a Sequence/Selection node react if a child returns RUNNING?
 
 GENERAL CLEANUP
 - Brackets
