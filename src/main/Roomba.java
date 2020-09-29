@@ -1,7 +1,7 @@
 package main;
 
-import node.TreeNode;
 import tree.BehaviorTree;
+import tree.TreeNode;
 import util.State;
 
 /**
@@ -37,14 +37,6 @@ public class Roomba {
 	public int getBatteryLevel() {
 		return this.behaviorTree.getBlackBoard().getBatteryLevel();
 	}
-	
-	/**
-	 * @return true if the 'spot' command was requested;
-	 * otherwise, returns false
-	 */
-	public boolean isSpot() {
-		return this.behaviorTree.getBlackBoard().isSpot();
-	}
 
 	/**
 	 * Sets whether or not the 'spot' command was requested
@@ -55,27 +47,11 @@ public class Roomba {
 	}
 
 	/**
-	 * @return true if the 'general' command was requested;
-	 * otherwise, returns false
-	 */
-	public boolean isGeneral() {
-		return this.behaviorTree.getBlackBoard().isGeneral();
-	}
-
-	/**
 	 * Sets whether or not the 'general' command was requested
-	 * @param spot - the new value of general
+	 * @param general - the new value of general
 	 */
 	public void setGeneral(boolean general) {
 		this.behaviorTree.getBlackBoard().setGeneral(general);
-	}
-
-	/**
-	 * @return true if the sensor detected a 'dusty spot';
-	 * otherwise, returns false
-	 */
-	public boolean isDustySpot() {
-		return this.behaviorTree.getBlackBoard().isDustySpot();
 	}
 
 	/**

@@ -2,8 +2,6 @@ package tree;
 
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
-
-import node.*;
 /**
  * TreeGenerator.java
  * @author Kevin Gao on 2020-9-29
@@ -34,8 +32,6 @@ public class TreeGenerator {
 	 */
 	private TreeNode createNode(BehaviorTreeStructure node, 
 			BlackBoard blackBoard) {
-
-//		System.out.println("Created " + node.getDescription() + ".\n");
 		
 		/** Retrieve Children */
 		BehaviorTreeStructure[] children = node.getChildren();

@@ -70,4 +70,5 @@ public enum TreeNodeType {
 	public Class<?> getClassType() {
 		return this.classType;
 	}
+	
 }

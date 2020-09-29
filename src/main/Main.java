@@ -3,12 +3,12 @@ package main;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
-import node.*;
 import tree.TreeGenerator;
+import tree.TreeNode;
 
 /**
  * main.java
- * @author Kevin Gao (kgao03) on 2020-9-27
+ * @author Kevin Gao (kgao03) on 2020-9-29
  * 
  * Driver class for the Roomba Reflex Agent
  * Creates a Roomba instance and simulates cycles
@@ -81,8 +81,6 @@ public class Main {
 		
 		runRoombaTest(spotIndex, generalIndex, dustyIndex);
 	}
-	
-	
 	
 	/**
 	 * Simulates the Roomba running in the given situation

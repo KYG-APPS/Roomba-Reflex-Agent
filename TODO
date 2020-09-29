@@ -78,16 +78,11 @@ class Roomba:
 	- Roomba();
 	- int run_cycle();
 
-****************** IN IMPLEMENTATION ******************
-
-* Need to implement run()
-Decorators:
-- Timer
-	- Needs to loop through
-
 Simulation
 	- Random Generation
-	
+
+****************** IN WORK ******************
+
 GENERAL CLEANUP
 - Brackets
 - Access Keywords
@@ -95,25 +90,3 @@ GENERAL CLEANUP
 - TODO
 - README
 ****************** AWAITING IMPLEMENTAION ******************
-
-
-REFERENCE GENERIC CONSTRUCTOR/METHOD RETRIEVAL
-/*
-public void testMethod() {
-	
-	TreeNode node;
-	Method method;
-	Constructor<?> constructor;
-	
-	try {
-		constructor = TreeNodeType.DO_NOTHING.getClassType().getConstructor(String.class, BlackBoard.class);
-		node = (TreeNode) constructor.newInstance("yey", null);
-		method = TreeNodeType.DO_NOTHING.getClassType().getMethod("run");
-		method.invoke(node);
-		System.out.println("Success!");
-	} catch (Exception e) {
-		System.out.println("Error executing retrieved method in TreeGenerator.java. Exiting...");
-		System.exit(1);
-	}
-}
-*/

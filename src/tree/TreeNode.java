@@ -1,8 +1,7 @@
-package node;
+package tree;
 
 import java.util.ArrayList;
 
-import tree.BlackBoard;
 import util.State;
 import util.TreeNodeType;
 
@@ -78,7 +77,7 @@ public abstract class TreeNode {
 	 * To be implemented for each subclass of TreeNode
 	 * Executes the instructions as specified by the behavior of the subclass
 	 * 
-	 * @return the resulting State (success/failure/running) of the TreeNode
+	 * @return the resulting State (SUCCEEDED/FAILED/RUNNING) of the TreeNode
 	 */
 	public abstract State run();
 	

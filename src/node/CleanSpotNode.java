@@ -1,6 +1,7 @@
 package node;
 
 import tree.BlackBoard;
+import tree.TreeNode;
 import util.State;
 import util.TreeNodeType;
 
