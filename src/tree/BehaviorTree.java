@@ -28,11 +28,10 @@ public class BehaviorTree {
 	}
 	
 	// TODO: Implement
-	State runCycle() {
+	public State runCycle() {
 		root.getClass();
 		blackBoard.getClass();
 		return null;
-		
 	}
 	
 }
