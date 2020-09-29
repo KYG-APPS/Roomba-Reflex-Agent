@@ -20,9 +20,16 @@ public class SpotNode extends TreeNode {
 		super(descriptor, TreeNodeType.SPOT, blackBoard);
 	}
 
-	// TODO: Implement Order
+	/**
+	 * @return State.SUCCEEDED if 'spot' is true; 
+	 * otherwise, returns State.FAILED
+	 */
 	public State run() {
-		return null;
+		BlackBoard blackBoard = super.getBlackBoard();
+		if (blackBoard.isSpot()) {
+			return State.SUCCEEDED;
+		}
+		return State.FAILED;
 	}
 	
 }

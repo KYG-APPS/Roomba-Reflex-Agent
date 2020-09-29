@@ -30,8 +30,18 @@ abstract class TreeNode
 	- public TreeNodeType getTreeNodeType() ;
 	- public abstract State run();
 * All subclasses of node should implement their own static run function.
+Node subclasses:
+- Composites:
+- Decorators:
+- Tasks:
+- Conditions:
+	- BATTERY_LESS_THAN
+	- SPOT
+	- GENERAL
+	- DUSTY_SPOT
 
-class BlackBoard
+
+class BlackBoard:
 - Instance Variables
 	- int batteryLevel;
 	- boolean spot;
@@ -73,10 +83,7 @@ Tasks:
 	- Writes to general
 - DO_NOTHING
 Conditions:
-- BATTERY_GREATER_THAN_30
-- SPOT
-- GENERAL
-- DUSTY_SPOT
+
 
 * Need to implement runCycle()
 class BehaviorTree
@@ -98,6 +105,8 @@ GENERAL CLEANUP
 - Brackets
 - Access Keywords
 - Documentation
+- TODO
+- README
 
 REFERENCE GENERIC CONSTRUCTOR/METHOD RETRIEVAL
 /*

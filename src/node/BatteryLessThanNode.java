@@ -20,9 +20,16 @@ public class BatteryLessThanNode extends TreeNode {
 		super(descriptor, TreeNodeType.BATTERY_LESS_THAN, blackBoard);
 	}
 
-	// TODO: Implement Order
+	/*
+	 * @return State.SUCCEEDED if the Battery Level is < 30; 
+	 * otherwise, returns State.FAILED
+	 */
 	public State run() {
-		return null;
+		BlackBoard blackBoard = super.getBlackBoard();
+		if (blackBoard.getBatteryLevel() < 30) {
+			return State.SUCCEEDED;
+		}
+		return State.FAILED;
 	}
 	
 }

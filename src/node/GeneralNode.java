@@ -20,9 +20,16 @@ public class GeneralNode extends TreeNode {
 		super(descriptor, TreeNodeType.GENERAL, blackBoard);
 	}
 
-	// TODO: Implement Order
+	/**
+	 * @return State.SUCCEEDED if 'general' is true;
+	 * otherwise, returns State.FAILED
+	 */
 	public State run() {
-		return null;
+		BlackBoard blackBoard = super.getBlackBoard();
+		if (blackBoard.isGeneral()) {
+			return State.SUCCEEDED;
+		}
+		return State.FAILED;
 	}
 	
 }

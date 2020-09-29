@@ -1,5 +1,7 @@
 package tree;
 
+import java.lang.reflect.Method;
+
 import node.TreeNode;
 import util.State;
 
@@ -27,11 +29,24 @@ public class BehaviorTree {
 		this.blackBoard = blackBoard;
 	}
 	
-	// TODO: Implement
+	/**
+	 * Runs one full cycle of this BehaviorTree
+	 * @return the final State after execution
+	 */
 	public State runCycle() {
-		root.getClass();
-		blackBoard.getClass();
-		return null;
+		Class<?> nodeClass = root.getTreeNodeType().getClassType();
+		Method method;
+		
+		try {
+			method = nodeClass.getMethod("run");
+			return (State) method.invoke(root);
+		} catch (Exception e) {
+			System.out.println("Error in runCycle of BehaviorTree.java. "
+					+ "Exiting...");
+			System.exit(1);
+		}
+		
+		return State.FAILED;
 	}
 	
 }

@@ -20,9 +20,16 @@ public class DustySpotNode extends TreeNode {
 		super(descriptor, TreeNodeType.DUSTY_SPOT, blackBoard);
 	}
 
-	// TODO: Implement Order
+	/**
+	 * @return State.SUCCEEDED if 'dusty spot' is true;
+	 * otherwise, returns State.FAILED
+	 */
 	public State run() {
-		return null;
+		BlackBoard blackBoard = super.getBlackBoard();
+		if (blackBoard.isDustySpot()) {
+			return State.SUCCEEDED;
+		}
+		return State.FAILED;
 	}
 	
 }
