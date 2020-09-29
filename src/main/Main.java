@@ -26,6 +26,9 @@ public class Main {
 
 		/** Create a Roomba with the BehaviorTree */
 		Roomba roomba = new Roomba(root);
+		
+		roomba.setSpot(true);
+		roomba.setGeneral(true);
 
 		/** Run simulation cycles */
 		for (int i = 0; i < 72; i++) {

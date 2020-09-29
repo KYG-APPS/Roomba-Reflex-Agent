@@ -32,11 +32,14 @@ public class CleanSpotNode extends TreeNode {
 	 * otherwise, returns State.RUNNING
 	 */
 	public State run() {
+		System.out.print("Running " + super.getDescriptor() + " NODE...");
 		this.remaining_cycles--;
 		if (this.remaining_cycles == 0) {
 			this.remaining_cycles = 20;
+			System.out.println(" SUCCEEDED!");
 			return State.SUCCEEDED;
 		}
+		System.out.println(" RUNNING");
 		return State.RUNNING;
 	}
 	

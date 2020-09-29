@@ -37,4 +37,52 @@ public class Roomba {
 	public int getBatteryLevel() {
 		return this.behaviorTree.getBlackBoard().getBatteryLevel();
 	}
+	
+	/**
+	 * @return true if the 'spot' command was requested;
+	 * otherwise, returns false
+	 */
+	public boolean isSpot() {
+		return this.behaviorTree.getBlackBoard().isSpot();
+	}
+
+	/**
+	 * Sets whether or not the 'spot' command was requested
+	 * @param spot - the new value of spot
+	 */
+	public void setSpot(boolean spot) {
+		this.behaviorTree.getBlackBoard().setSpot(spot);
+	}
+
+	/**
+	 * @return true if the 'general' command was requested;
+	 * otherwise, returns false
+	 */
+	public boolean isGeneral() {
+		return this.behaviorTree.getBlackBoard().isGeneral();
+	}
+
+	/**
+	 * Sets whether or not the 'general' command was requested
+	 * @param spot - the new value of general
+	 */
+	public void setGeneral(boolean general) {
+		this.behaviorTree.getBlackBoard().setGeneral(general);
+	}
+
+	/**
+	 * @return true if the sensor detected a 'dusty spot';
+	 * otherwise, returns false
+	 */
+	public boolean isDustySpot() {
+		return this.behaviorTree.getBlackBoard().isDustySpot();
+	}
+
+	/**
+	 * Sets whether or not a 'dusty spot' was detected
+	 * @param dustySpot - the new value of dustySpot
+	 */
+	public void setDustySpot(boolean dustySpot) {
+		this.behaviorTree.getBlackBoard().setDustySpot(dustySpot);
+	}
 }

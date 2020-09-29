@@ -86,15 +86,14 @@ Decorators:
 	- Needs to loop through
 
 - Subtract 1 from battery at every task
-	
-****************** AWAITING IMPLEMENTAION ******************
+
+- Roomba stops at dock
+- Done general runs when it shouldn't
+
 Simulation
 	- Random Generation
-
-Questions
-- Do timer nodes stop execution of a cycle
-- How does a Sequence/Selection node react if a child returns RUNNING?
-
+	
+****************** AWAITING IMPLEMENTAION ******************
 GENERAL CLEANUP
 - Brackets
 - Access Keywords
