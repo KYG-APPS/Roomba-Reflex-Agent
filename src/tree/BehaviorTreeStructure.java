@@ -65,7 +65,7 @@ public enum BehaviorTreeStructure {
 			null, 
 			"BATTERY CHECK CONDITION"),
 	DUSTY_SPOT_CHECK(TreeNodeType.DUSTY_SPOT, null, "DUSTY SPOT CONDITION"),
-	CLEAN_SPOT_2(TreeNodeType.CLEAN_SPOT, null, "CLEAN SPOT 2 TASK"),
+	CLEAN_SPOT_2(TreeNodeType.CLEAN_SPOT_EXTENDED, null, "CLEAN SPOT 2 TASK"),
 	CLEAN(TreeNodeType.CLEAN, null, "CLEAN"),
 	DONE_GENERAL(TreeNodeType.DONE_GENERAL, null, "DONE GENERAL TASK"),
 	

@@ -32,14 +32,18 @@ public class CleanSpotExtendedNode extends TreeNode {
 	 * otherwise, returns State.RUNNING
 	 */
 	public State run() {
-		this.remaining_cycles--;
+		System.out.print("Running " + super.getDescriptor() + " NODE...");
 		BlackBoard blackBoard = super.getBlackBoard();
 		blackBoard.setBatteryLevel(blackBoard.getBatteryLevel() - 1);
+		
+		this.remaining_cycles--;
 		if (this.remaining_cycles == 0) {
 			this.remaining_cycles = 35;
 			blackBoard.setDustySpot(false);
+			System.out.println(" SUCCEEDED!");
 			return State.SUCCEEDED;
 		}
+		System.out.println(" RUNNING");
 		return State.RUNNING;
 	}
 	

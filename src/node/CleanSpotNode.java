@@ -35,6 +35,7 @@ public class CleanSpotNode extends TreeNode {
 		System.out.print("Running " + super.getDescriptor() + " NODE...");
 		BlackBoard blackBoard = super.getBlackBoard();
 		blackBoard.setBatteryLevel(blackBoard.getBatteryLevel() - 1);
+		
 		this.remaining_cycles--;
 		if (this.remaining_cycles == 0) {
 			this.remaining_cycles = 20;
