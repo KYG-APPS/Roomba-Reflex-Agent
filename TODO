@@ -8,6 +8,9 @@ enum TreeNodeType
 	- string identifier
 	- ClassType
 
+enum BehaviorTreeStructure
+	- Node arrangement of behavior tree for easy changing/updating
+
 * Done!
 abstract class TreeNode
 - Instance Variables:
@@ -80,8 +83,7 @@ class BehaviorTree
 	- int runCycle();
 	
 ****************** AWAITING IMPLEMENTAION ******************
-enum BehaviorTreeStructure
-	- Node arrangement of behavior tree for easy changing/updating
+
 	
 class TreeGenerator:
 	generateTreeFromEnum();
@@ -95,3 +97,27 @@ GENERAL CLEANUP
 - Brackets
 - Access Keywords
 - Documentation
+
+REFERENCE GENERIC CONSTRUCTOR/METHOD RETRIEVAL
+
+	
+	
+	/*
+	public void testMethod() {
+		
+		TreeNode node;
+		Method method;
+		Constructor<?> constructor;
+		
+		try {
+			constructor = TreeNodeType.DO_NOTHING.getClassType().getConstructor(String.class, BlackBoard.class);
+			node = (TreeNode) constructor.newInstance("yey", null);
+			method = TreeNodeType.DO_NOTHING.getClassType().getMethod("run");
+			method.invoke(node);
+			System.out.println("Success!");
+		} catch (Exception e) {
+			System.out.println("Error executing retrieved method in TreeGenerator.java. Exiting...");
+			System.exit(1);
+		}
+	}
+	*/

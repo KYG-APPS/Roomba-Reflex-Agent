@@ -42,6 +42,14 @@ public class BlackBoard {
 		this.setDustySpot(dustySpot);
 		this.setHomePath(homePath);
 	}
+	
+	/**
+	 * No-Args Constructor for Blackboard
+	 * Initializes a BlackBoard with default values
+	 */
+	public BlackBoard() {
+		this(100, false, false, false, null);
+	}
 
 	/**
 	 * @return the battery level of the Roomba

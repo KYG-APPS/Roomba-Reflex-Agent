@@ -59,11 +59,11 @@ public enum BehaviorTreeStructure {
 
 	/** General Cleaning Command */
 	GENERAL_CHECK(TreeNodeType.GENERAL, null, "Check General Value"),
-	DONE_GENERAL(TreeNodeType.DONE_GENERAL, null, "Update General Value"),
 	BATTERY_CHECK_2(TreeNodeType.BATTERY_LESS_THAN, null, "2nd Battery Check"),
 	DUSTY_SPOT_CHECK(TreeNodeType.DUSTY_SPOT, null, "Check Dusty Spot Value"),
 	CLEAN_SPOT_2(TreeNodeType.CLEAN_SPOT, null, "Clean Spot"),
 	CLEAN(TreeNodeType.CLEAN, null, "Clean"),
+	DONE_GENERAL(TreeNodeType.DONE_GENERAL, null, "Update General Value"),
 	
 	CLEAN_SPOT_TIMER_2(TreeNodeType.TIMER, 
 			new BehaviorTreeStructure[] {
@@ -137,7 +137,7 @@ public enum BehaviorTreeStructure {
 					CLEANING_COMMAND_SELECTION,
 					DO_NOTHING_COMMAND
 			}, 
-			"Root Priority TreeNode");
+			"Root Priority Composite TreeNode");
 
 
 	/** TreeNodeType of the TreeNode */

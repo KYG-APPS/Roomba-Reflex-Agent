@@ -39,18 +39,18 @@ public abstract class TreeNode {
 	}
 	
 	/**
-	 * @return the number of children this TreeNode has
+	 * Sets the children of this TreeNode
+	 * @param children - the new ArrayList<TreeNode> of children
 	 */
-	public int numChildren() {
-		return this.children.size();
+	public void setChildren(ArrayList<TreeNode> children) {
+		this.children = children;
 	}
 	
 	/**
-	 * @param index the index of the child to retrieve
-	 * @return the child of this TreeNode at the specified index
+	 * @return ArrayList<TreeNode> holding all the children of this TreeNode
 	 */
-	public TreeNode getChild(int index) {
-		return this.children.get(index);
+	public ArrayList<TreeNode> getChildren() {
+		return this.children;
 	}
 	
 	/**

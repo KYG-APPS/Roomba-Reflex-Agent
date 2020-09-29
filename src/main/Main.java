@@ -16,7 +16,7 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		TreeGenerator generator = new TreeGenerator();
-		generator.testMethod();
+		generator.generateTree();
 	}
 	
 }

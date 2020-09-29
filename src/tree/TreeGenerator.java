@@ -1,10 +1,9 @@
 package tree;
 
 import java.lang.reflect.Constructor;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 
 import node.*;
-import util.TreeNodeType;
 /**
  * TreeGenerator.java
  * @author Kevin Gao on 2020-9-29
@@ -13,26 +12,58 @@ import util.TreeNodeType;
  */
 public class TreeGenerator {
 
-	
+	/**
+	 * Constructor for TreeGenerator
+	 */
 	public TreeGenerator() {
 		
 	}
 	
-	public void testMethod() {
+	/** 
+	 * @return a an instance of a BehaviorTree as specified by 
+	 * BehaviorTreeStructure
+	 */
+	public TreeNode generateTree() {
+		BlackBoard blackBoard = new BlackBoard();
+		return createNode(BehaviorTreeStructure.getRoot(), blackBoard);
+	}
+	
+	/**
+	 * Recursive function that generates the children of a TreeNode and
+	 * then the TreeNode itself
+	 * @param node - the node to create
+	 * @return - the node, along with all its subtrees
+	 */
+	private TreeNode createNode(BehaviorTreeStructure node, 
+			BlackBoard blackBoard) {
 		
-		TreeNode node;
-		Method method;
+		/** Retrieve Children */
+		BehaviorTreeStructure[] children = node.getChildren();
+		
+		/** Create Children */
+		ArrayList<TreeNode> createdChildren = new ArrayList<TreeNode>();
+		for (BehaviorTreeStructure t: children) {
+			createdChildren.add(createNode(t, blackBoard));
+		}
+		
+		/** Make Node */
+		TreeNode newNode = null;
+		Class<?> nodeClass = node.getTreeNodeType().getClassType();
 		Constructor<?> constructor;
 		
 		try {
-			constructor = TreeNodeType.DO_NOTHING.getClassType().getConstructor(String.class, BlackBoard.class);
-			node = (TreeNode) constructor.newInstance("yey", null);
-			method = TreeNodeType.DO_NOTHING.getClassType().getMethod("run");
-			method.invoke(node);
-			System.out.println("Success!");
+			constructor = nodeClass.getConstructor(String.class, BlackBoard.class);
+			newNode = (TreeNode) constructor.newInstance(
+					node.getDescription(),
+					blackBoard
+					);
+			newNode.setChildren(createdChildren);
 		} catch (Exception e) {
-			System.out.println("Error executing retrieved method in TreeGenerator.java. Exiting...");
+			System.out.println("Error Creating Node. Exiting...");
 			System.exit(1);
 		}
+		
+		return newNode;
 	}
+	
 }
