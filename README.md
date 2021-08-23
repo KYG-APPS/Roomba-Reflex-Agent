@@ -4,8 +4,6 @@ Author: Kevin Gao on 2020-9-29
 
 Roomba's Roamings is a full standalone simulation of a Roomba AI complete with a Behavior Tree modeled by node objects implemented in a modular fashion that facilitates updates to the Behavior Tree structure.
 
-Written in Java. Future programs will use Python (which I have been learning on the side while making this!)
-
 ## Key Implementation Details
 The program was designed with modularity and expandability as key considerations. As such, the Roomba's Behavior Tree is implemented as a Tree of nodes, each inheriting from the abstract TreeNode class and implementing their own run() functions. 
 
